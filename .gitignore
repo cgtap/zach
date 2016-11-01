@@ -1,2 +1,36 @@
-dist/
+## MAC OS
+.DS_Store
+
+## EMACS
+*~
+\#*
+.\#*
+*_flymake.js
+
+## VIM
+*.swp
+
+## IDEA / RUBYMINE
+.idea
+
+## PROJECT::SPECIFIC
+/.bundle
+/.sass-cache/
+/config/.
+/.env
+/env
+/log/*
+!/log/.keep
+/tmp
+.env
+/doc/*
+
 node_modules/
+bower_components/
+public/
+vendor/
+!public/.gitkeep
+
+Makefile
+.byebug_history
+npm-debug.log
