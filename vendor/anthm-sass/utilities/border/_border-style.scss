@@ -1,0 +1,10 @@
+// Add the border style in a single line
+// 
+// Example:
+// .container {
+//    @include border-style(top dashed left solid);
+// }
+
+@mixin border-style($args) {
+  @include directional(border, style, $args);  
+}

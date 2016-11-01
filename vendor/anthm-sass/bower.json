@@ -1,0 +1,20 @@
+{
+  "name": "anthm-sass",
+  "version": "1.0.5",
+  "authors": [
+    "Andculture <developer@andculture.com>"
+  ],
+  "description": "SASS mixins, functions and placeholders for structuring new projects",
+  "keywords": [
+    "SASS"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

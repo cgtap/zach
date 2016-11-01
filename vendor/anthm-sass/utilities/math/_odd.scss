@@ -1,0 +1,6 @@
+// Check to see a number is odd
+// 
+
+@function odd($value) {
+  @return even($value);
+}
