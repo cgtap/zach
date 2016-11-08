@@ -63,7 +63,7 @@ module.exports = function(grunt) {
 		concat: {
             dist: {
                 files: {
-                    'src/assets/js/app.js': ['src/assets/js/*.js']
+                    'src/assets/js/app.js': ['src/assets/js/**/*.js']
                 }
             },
         },
@@ -83,7 +83,7 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: '**/*.coffee',
-				tasks: ['coffee', 'uglify', 'copy']
+				tasks: ['coffee', 'uglify', 'concat', 'copy']
 			}
 		},
 
