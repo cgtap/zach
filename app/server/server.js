@@ -16,7 +16,7 @@ app.use(Session({
   secret: 'thisisasecret'
 }));
 
-app.use(express.static(path.join(__dirname, '../../public')));
+app.use(express.static(path.join(__dirname, '../../dist')));
 
 app.use(function(err, request, response, next) {
   console.log(err);
