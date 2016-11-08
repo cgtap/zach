@@ -1,6 +1,9 @@
 {
   "name": "zach-angular-node-mongodb",
   "version": "1.0.0",
+  "engines": {
+    "node": "5.12.0"
+  }, 
   "main": "index.js",
   "author": "Zach McCleaf",
   "dependencies": {
