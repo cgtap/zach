@@ -75,6 +75,7 @@ p {
 a {
   @include rem-fallback(font-size, 1.8);
   @include rem-fallback(line-height, 2.8);
+  color: $primary;
   font-family: $serif;
   text-decoration: none;
   border-bottom: none;
@@ -97,6 +98,20 @@ a {
     text-decoration: none;
     border-color: $secondary;
   }
+}
+
+.link {
+  @include rem-fallback(font-size, 1.8);
+  @include rem-fallback(line-height, 2.8);
+  color: $primary;
+  font-family: $serif;
+  text-decoration: none;
+  border-bottom: none;
+  transition: all 0.3s ease-in;
+  text-decoration: none;
+  position: relative;
+  display: inline;
+  border-bottom: 1px solid transparent;
 }
 
 

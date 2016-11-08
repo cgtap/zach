@@ -13,7 +13,7 @@
 
   angular.module('webApp.controllers', []).controller('mainController', controllers.MainController);
 
-  angular.module('webApp.services', []).service('projectService', services.ProjectService).service('anchorScrollService', services.AnchorScrollService);
+  angular.module('webApp.services', []).service('projectService', services.ProjectService).service('anchorScrollService', services.AnchorScrollService).service('expertiseService', services.ExpertiseService);
 
   app.config([
     '$routeProvider', function($routeProvider) {

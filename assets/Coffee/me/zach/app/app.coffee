@@ -18,6 +18,7 @@ angular.module 'webApp.controllers', []
 angular.module 'webApp.services', []
   .service 'projectService', services.ProjectService
   .service 'anchorScrollService', services.AnchorScrollService
+  .service 'expertiseService', services.ExpertiseService
 
 
 app.config [

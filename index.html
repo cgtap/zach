@@ -2,6 +2,26 @@
 <html>
   <head>
     <title>Zach McCleaf - Web Developer</title>
+
+    <!-- Favicon Stuff -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre|Open+Sans:400,400i,800" rel="stylesheet">
     <link rel="stylesheet" href="vendor/normalize.css">
@@ -44,16 +64,16 @@
                 <li>
                   <h6>Education</h6>
                   <ul>
-                    <li ng-repeat="project in projects | filter: {type: 'Education'}">
-                      <span class="link"><a href="" data-project-link ng-click="scrollTo($event)" class="proj-{{project.id}}">{{ project.projectName }}</a></span>
+                    <li ng-repeat="project in con.projects | filter: {type: 'Education'}">
+                      <span class="link"><a href="" data-project-link ng-click="con.scrollToProject($event)" class="proj-{{ project.id }}">{{ project.projectName }}</a></span>
                     </li>
                   </ul>
                 </li>
                 <li>
                   <h6>Healthcare</a></h6>
                   <ul>
-                    <li ng-repeat="project in projects | filter: {type: 'Healthcare'}">
-                      <span class="link"><a href="#" data-project-link ng-click="scrollTo($event)">{{ project.projectName }}</a></span>
+                    <li ng-repeat="project in con.projects | filter: {type: 'Healthcare'}">
+                      <span class="link"><a href="" data-project-link ng-click="con.scrollToProject($event)" class="proj-{{ project.id }}">{{ project.projectName }}</a></span>
                     </li>
                   </ul>
                 </li>
@@ -69,36 +89,24 @@
                 <li>
                   <h6>Ideas</h6>
                   <ul>
-                    <li>
-                      <span class="link"><a href="#">Collaboration</a></span>
-                    </li>
-                    <li>
-                      <span class="link"><a href="#">Communication</a></span>
+                    <li ng-repeat="expertise in con.expertise | filter: {type: 'idea'}">
+                      <span class="link">{{ expertise.name }}</span>
                     </li>
                   </ul>
                 </li>
                 <li>
                   <h6>UX / UI</h6>
                   <ul>
-                    <li>
-                      <span class="link"><a href="#">Wirefaming</a></span>
-                    </li>
-                    <li>
-                      <span class="link"><a href="#">Content Structure</a></span>
+                    <li ng-repeat="expertise in con.expertise | filter: {type: 'ux'}">
+                      <span class="link">{{ expertise.name }}</span>
                     </li>
                   </ul>
                 </li>
                 <li>
                   <h6>Development</h6>
                   <ul>
-                    <li>
-                      <span class="link"><a href="#">Database</a></span>
-                    </li>
-                    <li>
-                      <span class="link"><a href="#">Front-End</a></span>
-                    </li>
-                    <li>
-                      <span class="link"><a href="#">Back-End</a></span>
+                    <li ng-repeat="expertise in con.expertise | filter: {type: 'development'}">
+                      <span class="link">{{ expertise.name }}</span>
                     </li>
                   </ul>
                 </li>
@@ -112,7 +120,7 @@
             <ul>
                 <li data-project
                     class="block proj-{{project.id}}"
-                    ng-repeat="project in projects">
+                    ng-repeat="project in con.projects">
                     <div class="col-sm-12 col-md-7 content">
                       <h3>{{ project.projectName}}</h2>
                       <h6>{{ project.role }}</h6>
@@ -121,7 +129,7 @@
                       </p>
                       <p class="-sub">Agency: {{ project.agency }}</p>
                       <span class="link">
-                        <a href="{{ project.linkHref }}">Visit Site</a>
+                        <a href="{{ project.linkHref }}" target="_blank">Visit Site</a>
                       </span>
                     </div>
                   <div class="col-sm-12 col-md-5 mockup">
@@ -135,22 +143,6 @@
       <ng-include src="'partials/_footer.html'"></ng-include>
     </script>
 
-
-    <script type="text/ng-template" id="/login.html">
-      <div class="container">
-        <h2>Login</h2>
-        <form name="loginForm" ng-controller="loginController"
-              ng-submit="login(credentials)" novalidate>
-          <label for="username">Username:</label>
-          <input type="text" id="username"
-                 ng-model="credentials.username">
-          <label for="password">Password:</label>
-          <input type="password" id="password"
-                 ng-model="credentials.password">
-          <button type="submit">Login</button>
-        </form>
-      </div>
-    </script>
     <script src="assets/js/me/zach/namespaces.js"></script>
 
     <!-- Controllers -->
@@ -159,6 +151,7 @@
 
     <!-- Services -->
     <script src="assets/js/me/zach/services/projectService.js"></script>
+    <script src="assets/js/me/zach/services/expertiseService.js"></script>
     <script src="assets/js/me/zach/services/anchorScrollService.js"></script>
 
     <!-- App -->

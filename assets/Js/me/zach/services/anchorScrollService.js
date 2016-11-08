@@ -14,17 +14,14 @@
     AnchorScrollService.prototype._initialize = function() {};
 
     AnchorScrollService.prototype.scrollTo = function($event) {
-      return $('[data-project-link]').on('click', (function(_this) {
-        return function() {
-          var $offset, $target, $targetClass;
-          $target = $(event.currentTarget);
-          $targetClass = $target.attr('class');
-          $offset = $('.block.' + $targetClass).position().top;
-          return $('html, body').animate({
-            scrollTop: offset - 60
-          }, 600);
-        };
-      })(this));
+      var $target, offset, targetClass;
+      $target = $(event.currentTarget);
+      targetClass = $target.attr('class');
+      offset = $('.block.' + targetClass).position().top;
+      $('html, body').animate({
+        scrollTop: offset - 100
+      }, 600);
+      return false;
     };
 
     return AnchorScrollService;

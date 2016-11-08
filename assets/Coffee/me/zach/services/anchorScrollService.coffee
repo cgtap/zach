@@ -6,8 +6,8 @@ class services.AnchorScrollService
   _initialize: () ->
 
   scrollTo: ($event) =>
-    $('[data-project-link]').on 'click', =>
-      $target = $(event.currentTarget)
-      $targetClass = $target.attr('class')
-      $offset = $('.block.' + $targetClass).position().top
-      $('html, body').animate { scrollTop: offset - 60 }, 600
+    $target = $(event.currentTarget)
+    targetClass = $target.attr('class')
+    offset = $('.block.' + targetClass).position().top
+    $('html, body').animate { scrollTop: offset - 100 }, 600
+    false
