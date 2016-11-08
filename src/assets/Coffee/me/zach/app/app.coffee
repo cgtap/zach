@@ -5,7 +5,7 @@ directives = webApp.directives
 
 app = webApp.app = angular.module 'webApp', [
   'angular.filter'
-  'ngRoute' 
+  'ngRoute'
   'webApp.controllers'
   'webApp.services'
 ]
