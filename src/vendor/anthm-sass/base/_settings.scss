@@ -1,0 +1,145 @@
+
+// Color Palette Variables & Maps
+// -------------------------------
+
+$color-palettes: (
+  primary: (
+    default:  #e71e56,
+    dark:     darken(#e71e56, 10%),
+    light:    light(#e71e56, 10%)
+  ),
+  secondary: (
+    default:  #7d054c,
+    dark:     darken(#7d054c, 10%),
+    light:    light(#7d054c, 10%)
+  ),
+  neutral: (
+    default:  #4a4a4c
+  )
+) !default;
+
+
+// Modular Scale
+// -------------------------------
+
+$modular-scale-ratios: (
+  golden:             1.618,
+  minor-second:       1.067,
+  major-second:       1.125,
+  minor-third:        1.2,
+  major-third:        1.25,
+  perfect-fourth:     1.333,
+  augmented-fourth:   1.414,
+  perfect-fifth:      1.5,
+  minor-sixth:        1.6,
+  major-sixth:        1.667,
+  minor-seventh:      1.778,
+  major-seventh:      1.875,
+  octave:             2,
+  major-tenth:        2.5,
+  major-eleventh:     2.667,
+  major-twelfth:      3,
+  double-octave:      4
+) !default;
+
+$modular-scale: (
+  ratio: map-get($modular-scale-ratios, perfect-fourth),
+  base:  em(16)
+) !default;
+
+
+// Grid Variables & Maps
+// -------------------------------
+
+$grid-settings: (
+  columns:          12,
+  column-width:     modular-scale(3, 1em, map-get($modular-scale-ratios, golden)),
+  gutter:           modular-scale(1, 1em, map-get($modular-scale-ratios, golden)),
+  visual:           false,
+  visual-color:     #ccc,
+  visual-index:     back,
+  visual-opacity:   0.4,
+  width:            em(1200)
+) !default;
+
+
+// Responsive Variables & Maps
+// -------------------------------
+
+$device-widths: (
+  min:      em(320),
+  tablet:   em(768),
+  document: map-get($grid-settings, width),
+  max:      em(2880)
+);
+
+$breakpoints: (
+  mobile-only:  em(480),
+  phablet:      em(480),
+  tablet:       em(768),
+  laptop:       em(940),
+  desktop:      map-get($grid-settings, width)
+) !default;
+
+
+// Font Variables & Maps
+// -------------------------------
+
+$font-weights: (
+  bold:     700,
+  semibold: 600,
+  medium:   400,
+  regular:  400,
+  light:    400,
+  thin:     300
+) !default;
+
+
+// Button Variables & Maps
+// -------------------------------
+
+$buttons: (
+  default: (    
+    background-color: #fff,
+    border:           solid 1px color-palette(neutral),
+    color:            color-palette(neutral),
+    hover: (
+      background-color: color-palette(neutral),
+      color:            #fff
+    )
+  ),
+  primary: (
+    background-color: color-palette(primary),
+    border:           solid 1px transparent,
+    color:            #fff,
+    hover: (
+      background-color: color-palette(secondary)
+    )
+  ),
+  secondary: (
+    background-color: color-palette(secondary),
+    border:           solid 1px transparent,
+    color:            color-palette(primary),
+    hover: (
+      background-color: color-palette(primary),      
+    )
+  )
+) !default;
+
+$button-sizes: (
+  default: (
+    border-radius:  4px,
+    font-size:      em(14),
+    padding:        rem(6) rem(12)
+  ),
+  small: (
+    border-radius:  3px,
+    font-size:      em(12),
+    padding:        rem(5) rem(10)
+  ),
+  large: (
+    border-radius:  6px,
+    font-size:      em(18),
+    padding:        rem(10) rem(16)
+  )
+) !default;

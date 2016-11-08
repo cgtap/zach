@@ -1,0 +1,10 @@
+// Add the border color in a single line
+// 
+// Example:
+// .container {
+//    @include border-color(top red right green left blue);
+// }
+
+@mixin border-color($args) {
+  @include directional(border, color, $args);
+}

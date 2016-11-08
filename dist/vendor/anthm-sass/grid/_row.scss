@@ -1,0 +1,13 @@
+@mixin grid-row($display: default) {
+  @if $display == table {
+    display:      table;
+    table-layout: fixed;
+  } else {
+    @extend %clearfix;
+    display: block;
+  }
+}
+
+%row {
+  @include grid-row();
+}

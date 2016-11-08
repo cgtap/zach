@@ -1,0 +1,18 @@
+// Convert pixels to rems
+// 
+// Example:
+// .container {
+//    font-size: rem(12);
+// }
+
+@function rem($px, $baseValue: 16px) {
+  @if not unitless($px) {
+    $px: remove-units($px);
+  }
+
+  @if not unitless($baseValue) {
+    $baseValue: remove-units($baseValue);
+  }
+
+  @return ($px / $baseValue) * 1rem;
+}

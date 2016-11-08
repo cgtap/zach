@@ -1,0 +1,16 @@
+// Force words to wrap even if the word should 
+// normally stay on the same line
+// 
+// Example:
+// .container {
+//    @include word-wrap();
+// }
+
+@mixin word-wrap($wrap: break-word) {
+  word-wrap: $wrap;
+
+  @if $wrap == break-word {
+    overflow-wrap: break-word;
+    word-break: break-all;
+  }
+}

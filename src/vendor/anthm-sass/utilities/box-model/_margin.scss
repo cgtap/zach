@@ -1,0 +1,10 @@
+// Add the margin in a single line
+// 
+// Example:
+// .container {
+//    @include margin(top 5px right 10px bottom 10px left 5px);
+// }
+
+@mixin margin($args) {
+  @include directional(margin, false, $args);
+}

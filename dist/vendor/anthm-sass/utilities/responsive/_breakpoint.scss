@@ -1,0 +1,17 @@
+@mixin breakpoint($point) {
+  @if $point == desktop {
+     @media (min-width: map-get($breakpoints, desktop)) { @content; }
+  }
+   @else if $point == laptop {
+     @media (min-width: map-get($breakpoints, laptop)) { @content; }
+  }
+    @else if $point == tablet {
+     @media (min-width: map-get($breakpoints, tablet)) { @content; }
+  }
+   @else if $point == phablet {
+     @media (min-width: map-get($breakpoints, phablet))  { @content; }
+  }
+  @else if $point == mobileonly {
+     @media (max-width: map-get($breakpoints, mobile-only))  { @content; }
+  }
+}

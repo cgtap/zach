@@ -1,0 +1,10 @@
+@mixin directional($prefix, $suffix, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+      $name: if($prefix, "#{$prefix}-", "") + "#{$o}" + if($suffix, "-#{$suffix}", "");
+      #{$name}: nth($args, $i + 1);
+    }
+  }
+}
