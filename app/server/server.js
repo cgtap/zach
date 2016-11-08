@@ -14,7 +14,7 @@ app.use(Session({
   secret: 'thisisasecret'
 }));
 
-app.use(express.static('dist'))
+app.use(express.static(__dirname + '/dist'));
 
 app.use(function(err, request, response, next) {
   console.log(err);
