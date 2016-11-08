@@ -14,6 +14,8 @@ app.use(Session({
   secret: 'thisisasecret'
 }));
 
+app.use(express.static('dist'))
+
 app.use(function(err, request, response, next) {
   console.log(err);
   return response.status(500).send('Something broke!');
