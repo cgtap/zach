@@ -10,11 +10,13 @@ port = process.env.PORT || 3000;
 
 path = require('path');
 
+process.env.PWD = process.cwd(); 
+
 app.use(Session({
   secret: 'thisisasecret'
 }));
 
-app.use(express['static'](__dirname + '/dist'));
+app.use(express.static(process.env.PWD + '/dist'));
 
 app.use(function(err, request, response, next) {
   console.log(err);
