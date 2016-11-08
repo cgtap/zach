@@ -10,4 +10,19 @@ port = process.env.PORT || 3000;
 
 path = require('path');
 
+app.use(Session({
+  secret: 'thisisasecret'
+}));
+
+app.use(function(err, request, response, next) {
+  console.log(err);
+  return response.status(500).send('Something broke!');
+});
+
+app.listen(port, function(err) {
+  if (err) {
+    return console.log('something bad happened', err);
+  }
+});
+
 console.log("server is listening on " + port);
