@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Zach McCleaf - Web Developer</title>
+
+    <!-- Favicon Stuff -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre|Open+Sans:400,400i,800" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/normalize.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+    <script src="vendor/modernizr-2.8.3.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-filter/0.4.7/angular-filter.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+
+  </head>
+  <body ng-app="webApp" headerDirective>
+
+    <div ng-view>
+      <!-- Shit gets rendered here -->
+    </div>
+
+    <script type="text/ng-template" id="/home.html">
+      <a href="#content" class="offscreen">Skip to Content</a>
+      <ng-include src="'partials/_header.html'"></ng-include>
+      <main id="content" class="container">
+        <section class="row">
+          <div class="col-sm-12 col-md-2">
+            <img class="-circle" src="Assets/Images/Zach.jpg">
+          </div>
+          <p class="col-sm-12 col-md-10 -vertically-center">
+            Lover of all things outdoors, my family, craft beer, ping pong, and learning. I am from Southern Pennsylvania, and love to solve problems with
+            modular, succinct code. Currently working at an experience design and engineering firm called Andculture as a Software Engineer. I have had the pleasure of working with some amazing clients, and am anxious to continue to cultivate my
+            craft, and hone my skills.
+          </p>
+        </section>
+        <section class="row">
+          <div class="col-xs-12 col-sm-6">
+          <ul class="list">
+            <li>
+              <h5>Projects</h5>
+              <ul>
+                <li>
+                  <h6>Education</h6>
+                  <ul>
+                    <li ng-repeat="project in con.projects | filter: {type: 'Education'}">
+                      <span class="link"><a href="" data-project-link ng-click="con.scrollToProject($event)" class="proj-{{ project.id }}">{{ project.projectName }}</a></span>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <h6>Healthcare</a></h6>
+                  <ul>
+                    <li ng-repeat="project in con.projects | filter: {type: 'Healthcare'}">
+                      <span class="link"><a href="" data-project-link ng-click="con.scrollToProject($event)" class="proj-{{ project.id }}">{{ project.projectName }}</a></span>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+          <div class="col-xs-12 col-sm-6">
+          <ul class="list">
+            <li>
+              <h5>Expertise</h5>
+              <ul>
+                <li>
+                  <h6>Ideas</h6>
+                  <ul>
+                    <li ng-repeat="expertise in con.expertise | filter: {type: 'idea'}">
+                      <span class="link">{{ expertise.name }}</span>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <h6>UX / UI</h6>
+                  <ul>
+                    <li ng-repeat="expertise in con.expertise | filter: {type: 'ux'}">
+                      <span class="link">{{ expertise.name }}</span>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <h6>Development</h6>
+                  <ul>
+                    <li ng-repeat="expertise in con.expertise | filter: {type: 'development'}">
+                      <span class="link">{{ expertise.name }}</span>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        </section>
+        <section class="row">
+          <div class="" id="middle"></div>
+            <ul>
+                <li data-project
+                    class="block proj-{{project.id}}"
+                    ng-repeat="project in con.projects">
+                    <div class="col-sm-12 col-md-7 content">
+                      <h3>{{ project.projectName}}</h2>
+                      <h6>{{ project.role }}</h6>
+                      <p>
+                        {{ project.desc }}
+                      </p>
+                      <p class="-sub">Agency: {{ project.agency }}</p>
+                      <span class="link">
+                        <a href="{{ project.linkHref }}" target="_blank">Visit Site</a>
+                      </span>
+                    </div>
+                  <div class="col-sm-12 col-md-5 mockup">
+                    <img ng-src="Assets/Images/Mockups/{{ project.desktopImg }}">
+                    <img ng-src="Assets/Images/Mockups/{{ project.mobileImg }}">
+                  </div>
+                </li>
+              </ul>
+          </section>
+      </main>
+      <ng-include src="'partials/_footer.html'"></ng-include>
+    </script>
+
+    <script src="assets/js/me/zach/namespaces.js"></script>
+
+    <!-- Controllers -->
+    <script src="assets/js/me/zach/controllers/mainController.js"></script>
+    <script src="assets/js/me/zach/controllers/loginController.js"></script>
+
+    <!-- Services -->
+    <script src="assets/js/me/zach/services/projectService.js"></script>
+    <script src="assets/js/me/zach/services/expertiseService.js"></script>
+    <script src="assets/js/me/zach/services/anchorScrollService.js"></script>
+
+    <!-- App -->
+    <script src="assets/js/me/zach/app/app.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,201 @@
+// Headings
+// ---------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $sans-serif;
+  color: $primary;
+  margin-top: 0;
+}
+
+h5,
+h6 {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .075em;
+}
+
+h1 {
+  @include rem-fallback(font-size, 6);
+  @include rem-fallback(line-height, 7);
+}
+
+h2 {
+  @include rem-fallback(font-size, 5);
+  @include rem-fallback(line-height, 6);
+}
+
+h3 {
+  @include rem-fallback(font-size, 4);
+  @include rem-fallback(line-height, 5);
+}
+
+h4 {
+  @include rem-fallback(font-size, 3);
+  @include rem-fallback(line-height, 4);
+}
+
+h5 {
+  @include rem-fallback(font-size, 2);
+  @include rem-fallback(line-height, 3);
+}
+
+h6 {
+  @include rem-fallback(font-size, 1);
+  @include rem-fallback(line-height, 2);
+  margin-bottom: 20px;
+}
+
+
+// Paragraph
+// ----------
+
+p {
+  @include rem-fallback(font-size, 1.8);
+  @include rem-fallback(line-height, 2.8);
+  @include rem-fallback(margin-bottom, 2);
+  font-family: $serif;
+
+  &.-sub {
+    @include rem-fallback(font-size, 1.6);
+    @include rem-fallback(line-height, 2);
+    @include rem-fallback(margin-bottom, 3);
+  }
+}
+
+
+
+// Links
+// ------
+
+a {
+  @include rem-fallback(font-size, 1.8);
+  @include rem-fallback(line-height, 2.8);
+  color: $primary;
+  font-family: $serif;
+  text-decoration: none;
+  border-bottom: none;
+  transition: all 0.3s ease-in;
+  text-decoration: none;
+  position: relative;
+  display: inline;
+  border-bottom: 1px solid transparent;
+
+  &.-no-border {
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+
+  &:hover {
+    color: $tertiary;
+    text-decoration: none;
+    border-color: $secondary;
+  }
+}
+
+.link {
+  @include rem-fallback(font-size, 1.8);
+  @include rem-fallback(line-height, 2.8);
+  color: $primary;
+  font-family: $serif;
+  text-decoration: none;
+  border-bottom: none;
+  transition: all 0.3s ease-in;
+  text-decoration: none;
+  position: relative;
+  display: inline;
+  border-bottom: 1px solid transparent;
+}
+
+
+// Lists
+// ------
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    padding: 3px 20px;
+    position:relative;
+    text-decoration: none;
+    font-weight:normal;
+    line-height:20px;
+
+    h6 {
+      margin-top: 4px;
+    }
+
+    a {
+      @include rem-fallback(font-size, 1.8);
+      @include rem-fallback(margin-bottom, 1);
+      font-family: $serif;
+      color: $secondary;
+
+      &:hover {
+        color: $secondary;
+
+        &:before {
+          border-color: $secondary;
+        }
+      }
+    }
+  }
+
+  ul {
+    position:relative;
+    margin-left:10px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      display: block;
+      border-left: 1px solid #ccc;
+    }
+
+    li {
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 16px;
+        left: 0;
+        width: 16px;
+        height: 0;
+        display: block;
+        border-top: 1px solid #ccc;
+      }
+
+      &:last-child {
+
+        &:before {
+          top: 17px;
+          bottom: 0;
+          height: auto;
+          background: white;
+        }
+      }
+    }
+  }
+}
+
+
+// Rule
+// -----
+
+hr {
+  border-color: lighten($primary, 60%);
+  margin: 160px 0;
+}

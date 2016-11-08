@@ -1,0 +1,21 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: $primary;
+}
+
+.wrapper {
+  position: relative;
+}
+
+main {
+  @include rem-fallback(margin-top, 10);
+  @include rem-fallback(margin-bottom, 10);
+}
+
+section {
+  @include rem-fallback(margin-top, 14);
+  @include rem-fallback(margin-bottom, 14);
+}

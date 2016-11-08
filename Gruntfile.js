@@ -6,14 +6,14 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
 		pkg: grunt.file.readJSON('package.json'),
-		
+
 		sass: {
 			dist: {
 				files: {
-					'assets/css/app.css': 'assets/sass/app.scss'
+					'src/assets/css/app.css': 'src/assets/sass/app.scss'
 				}
 			}
-		}, 
+		},
 
 		jshint: {
 			options: {
@@ -28,11 +28,11 @@ module.exports = function(grunt) {
 			},
 			build: {
 				files: {
-					'assets/js/app.min.js': 'assetes/js/app.js'
+					'src/assets/js/app.min.js': 'src/assetes/js/app.js'
 				}
 			}
 		},
-		
+
 		coffee: {
             compile: {
                 options: {
@@ -41,37 +41,37 @@ module.exports = function(grunt) {
                 },
                 expand: true,
                 flatten: false,
-                cwd: 'assets/coffee',
+                cwd: 'src/assets/coffee',
                 src: ['**/*.coffee'],
-                dest: 'assets/js',
+                dest: 'src/assets/js',
                 ext: '.js',
                 extDot: 'last'
             }
         },
-		
+
 		cssmin: {
 			options: {
 				banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
 			},
 			build: {
 				files: {
-					'assets/css/app.min.css': 'assetes/css/app.css'
+					'src/assets/css/app.min.css': 'src/assetes/css/app.css'
 				}
 			}
 		},
-		
+
 		concat: {
             dist: {
                 files: {
-                    'assets/js/app.js': ['assets/js/*.js']
+                    'src/assets/js/app.js': ['src/assets/js/*.js']
                 }
             },
         },
-		
+
 		uglify: {
 			my_target: {
 				files: {
-					'assets/js/app.min.js': ['assets/js/app.js']
+					'src/assets/js/app.min.js': ['src/assets/js/app.js']
 				}
 			}
 		},
@@ -79,12 +79,20 @@ module.exports = function(grunt) {
 		watch: {
 			css: {
 				files: '**/*.scss',
-				tasks: ['sass', 'cssmin']
+				tasks: ['sass', 'cssmin', 'copy']
 			},
 			js: {
 				files: '**/*.coffee',
-				tasks: ['coffee', 'uglify']
+				tasks: ['coffee', 'uglify', 'copy']
 			}
+		},
+
+		copy: {
+		  main: {
+  			files: [
+  			  {expand: true, cwd: 'src/', src: ['**'], dest: 'dist/'}
+  			],
+		  },
 		}
 
 	});
@@ -99,6 +107,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
   // ===========================================================================
   // CREATE TASKS ==============================================================

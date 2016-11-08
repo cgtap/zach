@@ -1,7 +1,0 @@
-// Remove any units from the value (strip px, em, etc...)
-//
-// Example:
-//    remove-units(10px);
-@function remove-units($value) {
-  @return ($value / ($value * 0 + 1));
-}

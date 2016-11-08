@@ -1,3 +1,0 @@
-@mixin box-emboss($opacity, $opacity2) {
-  @include prefix(box-shadow, rgba(255, 255, 255, $opacity) 0 1px 0, inset rgba(0, 0, 0, $opacity2) 0 1px 0, webkit moz);
-}
