@@ -6,7 +6,7 @@ Session = require('express-session');
 
 app = express();
 
-port = port.env.PORT || 3000;
+port = process.env.PORT || 3000;
 
 path = require('path');
 
