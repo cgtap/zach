@@ -2,7 +2,8 @@
   "name": "zach-angular-node-mongodb",
   "version": "1.0.0",
   "engines": {
-    "node": "5.12.0"
+    "node": "5.12.0",
+    "npm": "3.8.6"
   },
   "main": "index.js",
   "author": "Zach McCleaf",
