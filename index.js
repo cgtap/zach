@@ -4,7 +4,7 @@ require('./app/index')
 // CALLS TO METHODS
 // -----------------------------------------------------------------------------
 
-var MongoClient = require('mongodb').MongoClient
+/*var MongoClient = require('mongodb').MongoClient
   , assert = require('assert');
 
 // Connection URL
@@ -19,13 +19,13 @@ MongoClient.connect(url, function(err, db) {
       db.close();
     });
   });
-});
+});*/
 
 
 // INSERT PROJECT
 // -----------------------------------------------------------------------------
 
-var insertProject = function(db, callback) {
+/*var insertProject = function(db, callback) {
   // Get the projects collection
   var collection = db.collection('projects');
   // Insert a project
@@ -38,13 +38,13 @@ var insertProject = function(db, callback) {
     console.log("Inserted project into the collection");
     callback(result);
   });
-}
+}*/
 
 
 // FIND PROJECTS
 // -----------------------------------------------------------------------------
 
-var findProjects = function(db, callback) {
+/*var findProjects = function(db, callback) {
   // Get the documents collection
   var collection = db.collection('projects');
   // Find some documents
@@ -54,13 +54,13 @@ var findProjects = function(db, callback) {
     console.log(projects)
     callback(projects);
   });
-}
+}*/
 
 
 // UPDATE PROJECT
 // -----------------------------------------------------------------------------
 
-var updateProject = function(db, callback) {
+/*var updateProject = function(db, callback) {
   // Get the documents collection
   var collection = db.collection('projects');
   // Update document where a is 2, set b equal to 1
@@ -71,4 +71,4 @@ var updateProject = function(db, callback) {
     console.log("Updated the project with the field a equal to 2");
     callback(result);
   });
-}
+}*/
