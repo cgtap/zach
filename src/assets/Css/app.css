@@ -10,14 +10,24 @@ body {
 main {
   margin-top: 160px;
   margin-top: 10rem;
-  margin-bottom: 160px;
-  margin-bottom: 10rem; }
+  margin-bottom: 0px;
+  margin-bottom: 0rem; }
+  @media (min-width: 1024px) {
+    main {
+      margin-bottom: 160px;
+      margin-bottom: 10rem; } }
 
 section {
-  margin-top: 224px;
-  margin-top: 14rem;
-  margin-bottom: 224px;
-  margin-bottom: 14rem; }
+  margin-top: 80px;
+  margin-top: 5rem;
+  margin-bottom: 80px;
+  margin-bottom: 5rem; }
+  @media (min-width: 1024px) {
+    section {
+      margin-top: 224px;
+      margin-top: 14rem;
+      margin-bottom: 224px;
+      margin-bottom: 14rem; } }
 
 h1,
 h2,
@@ -70,7 +80,7 @@ h6 {
   font-size: 1rem;
   line-height: 32px;
   line-height: 2rem;
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
 
 p {
   font-size: 28.8px;
@@ -81,12 +91,17 @@ p {
   margin-bottom: 2rem;
   font-family: "Abhaya Libre", serif; }
   p.-sub {
-    font-size: 25.6px;
-    font-size: 1.6rem;
+    font-size: 22.4px;
+    font-size: 1.4rem;
     line-height: 32px;
     line-height: 2rem;
-    margin-bottom: 48px;
-    margin-bottom: 3rem; }
+    margin-bottom: 64px;
+    margin-bottom: 4rem; }
+  p.-copy {
+    margin-top: 40px; }
+    @media (min-width: 1024px) {
+      p.-copy {
+        margin-top: 0; } }
 
 a {
   font-size: 28.8px;
@@ -210,10 +225,32 @@ header {
     header.-scrolled a {
       font-size: 32px;
       font-size: 2rem; }
+  header .-align-right {
+    margin-top: 10px; }
+    @media (min-width: 1024px) {
+      header .-align-right {
+        margin-top: 20px; } }
+  header .logo-container {
+    overflow: hidden;
+    height: 40px;
+    border: 8px solid #3C4045; }
+    @media (min-width: 1024px) {
+      header .logo-container {
+        height: 64px; } }
   header a {
     font-size: 32px;
     font-size: 2rem;
     color: #3C4045; }
+    header a.-logo {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 900;
+      font-size: 64px;
+      position: relative; }
+      @media (min-width: 1024px) {
+        header a.-logo {
+          font-size: 120px;
+          line-height: 44px;
+          left: -6px; } }
     @media (min-width: 1024px) {
       header a {
         font-size: 64px;
@@ -275,9 +312,12 @@ img {
 .mockup {
   position: relative; }
   .mockup img:last-of-type {
-    width: 130px;
+    width: 94px;
     position: absolute;
     bottom: -20px; }
+    @media (min-width: 1024px) {
+      .mockup img:last-of-type {
+        width: 130px; } }
 
 .icon {
   font-size: 32px;
@@ -287,13 +327,17 @@ img {
   *zoom: 1;
   border-bottom: 1px solid #d7d9dc;
   padding: 0;
-  padding-bottom: 160px;
-  margin-bottom: 160px; }
+  padding-bottom: 60px;
+  margin-bottom: 60px; }
   .block:before, .block:after {
     content: " ";
     display: table; }
   .block:after {
     clear: both; }
+  @media (min-width: 1024px) {
+    .block {
+      padding-bottom: 160px;
+      margin-bottom: 160px; } }
   .block:last-of-type {
     border-bottom: none;
     margin-bottom: 0; }
@@ -303,21 +347,28 @@ img {
     position: relative;
     float: left; }
     .block:nth-of-type(even) .mockup img:last-of-type {
-      left: -20px; }
+      left: 0; }
+      @media (min-width: 1024px) {
+        .block:nth-of-type(even) .mockup img:last-of-type {
+          left: -20px; } }
   .block:nth-of-type(odd) .mockup {
     position: relative; }
     .block:nth-of-type(odd) .mockup img:last-of-type {
-      right: -20px; }
+      right: 0; }
+      @media (min-width: 1024px) {
+        .block:nth-of-type(odd) .mockup img:last-of-type {
+          right: -20px; } }
   .block > div {
     margin-bottom: 60px; }
     @media (min-width: 990px) {
       .block > div {
         margin-bottom: 0; } }
 
-.-vertically-center {
-  position: relative;
-  top: 50%;
-  transform: translateY(25%); }
+@media (min-width: 1024px) {
+  .-vertically-center {
+    position: relative;
+    top: 50%;
+    transform: translateY(25%); } }
 
 .-align-right {
   text-align: right; }

@@ -47,7 +47,7 @@ h5 {
 h6 {
   @include rem-fallback(font-size, 1);
   @include rem-fallback(line-height, 2);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 
@@ -61,9 +61,17 @@ p {
   font-family: $serif;
 
   &.-sub {
-    @include rem-fallback(font-size, 1.6);
+    @include rem-fallback(font-size, 1.4);
     @include rem-fallback(line-height, 2);
-    @include rem-fallback(margin-bottom, 3);
+    @include rem-fallback(margin-bottom, 4);
+  }
+
+  &.-copy {
+    margin-top: 40px;
+
+    @media(min-width: 1024px) {
+      margin-top: 0; 
+    }
   }
 }
 

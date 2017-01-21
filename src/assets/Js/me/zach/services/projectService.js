@@ -59,7 +59,7 @@
           id: 5,
           projectName: 'Mount Nittany Health Kids',
           role: 'Front-End Developer',
-          desc: 'Mount Nittany Health Kids is an online source to learn about their team and offices, and to help you teach children about the importance of being healthy and what it’s like to go to the doctor’s office.',
+          desc: "Mount Nittany Health Kids is an online source to learn about their team and offices, and to help you teach children about the importance of being healthy and what it's like to go to the doctor's office.",
           linkHref: 'http://kids.mountnittany.org/',
           mobileImg: 'mobile-mnhkids.png',
           desktopImg: 'laptop-mnhkids.png',

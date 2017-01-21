@@ -21,9 +21,13 @@
   img {
 
     &:last-of-type {
-      width: 130px;
+      width: 94px;
       position: absolute;
       bottom: -20px;
+
+      @media (min-width: 1024px) {
+        width: 130px;
+      }
     }
   }
 }
@@ -33,11 +37,16 @@
 }
 
 .block {
-  @include clearfix; 
+  @include clearfix;
   border-bottom: 1px solid lighten($primary, 60%);
   padding: 0;
-  padding-bottom: 160px;
-  margin-bottom: 160px;
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+
+  @media (min-width: 1024px) {
+    padding-bottom: 160px;
+    margin-bottom: 160px;
+  }
 
   &:last-of-type {
     border-bottom: none;
@@ -57,7 +66,11 @@
       img {
 
         &:last-of-type {
-          left: -20px;
+          left: 0;
+
+          @media (min-width: 1024px) {
+            left: -20px;
+          }
         }
       }
     }
@@ -70,7 +83,11 @@
       img {
 
         &:last-of-type {
-          right: -20px;
+          right: 0;
+
+          @media (min-width: 1024px) {
+            right: -20px;
+          }
         }
       }
     }
@@ -86,9 +103,12 @@
 }
 
 .-vertically-center {
-  position: relative;
-  top: 50%;
-  transform: translateY(25%);
+
+  @media (min-width: 1024px) {
+    position: relative;
+    top: 50%;
+    transform: translateY(25%);
+  }
 }
 
 .-align-right {

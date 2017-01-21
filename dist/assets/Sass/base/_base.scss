@@ -12,10 +12,19 @@ body {
 
 main {
   @include rem-fallback(margin-top, 10);
-  @include rem-fallback(margin-bottom, 10);
+  @include rem-fallback(margin-bottom, 0);
+
+  @media (min-width: 1024px) {
+    @include rem-fallback(margin-bottom, 10);
+  }
 }
 
 section {
-  @include rem-fallback(margin-top, 14);
-  @include rem-fallback(margin-bottom, 14);
+  @include rem-fallback(margin-top, 5);
+  @include rem-fallback(margin-bottom, 5);
+
+  @media (min-width: 1024px) {
+    @include rem-fallback(margin-top, 14);
+    @include rem-fallback(margin-bottom, 14);
+  }
 }
